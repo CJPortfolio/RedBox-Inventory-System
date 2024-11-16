@@ -1,9 +1,5 @@
-package UnitTest;
-
-
-//TODO: Import J Unit Testing
-
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 import org.junit.Test;
 
 public class AppTest {
@@ -11,24 +7,26 @@ public class AppTest {
     @Test
     public void testAddTitle()
     {
-        assertEquals(null, null);
+
     }
 
     @Test
     public void testRemoveTitle()
     {
-        assertEquals(null, null);    
+        String sigma = "Skibidi";
+        String sigma1 = "Skibidi";
+        assertEquals(sigma, sigma1);
     }
-
+    
     @Test
     public void testRentTitle()
     {
-        assertEquals(null, null);    
+        assertTrue(true);
     }
 
     @Test
     public void testReturnTitle()
     {
-        assertEquals(null, null);    
+
     }
 }
