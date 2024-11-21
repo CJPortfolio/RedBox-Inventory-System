@@ -1,8 +1,10 @@
+//Student ID: cjw220005
+//Name: Christopher Wiratman
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import org.junit.Test;
 
-public class AppTest {
+public class UnitTests {
 
     @Test
     public void testAddTitle()
