@@ -2,18 +2,44 @@
 //Name: Christopher Wiratman
 package Command;
 
-import Common.BinarySearchTree;
-import Common.Movie;
+import Common.MovieInventory;
 
 public abstract class Command {
 
-    BinarySearchTree<Movie> Inventory;
+
+    MovieInventory Inventory;
+    String title;
+    int valueToUse;
     
-    public Command(BinarySearchTree<Movie> Inventory)
+    public Command(MovieInventory Inventory, String title, int valueToUse)
     {
         this.Inventory = Inventory;
+        this.title = title;
+        this.valueToUse = valueToUse;
     }
-    
+
+    /*
+    public static Command dynamicallyCreateCommand(BinarySearchTree<Movie> Inventory, String commandName)
+    {
+        Class<?> concreteCommandClass = null;
+        Command command = null;
+        String packageName = "Command";
+        String commandLabel = "TitleCommand";
+
+        try
+        {
+            concreteCommandClass = Class.forName(packageName + "." + commandName + commandLabel);
+            Constructor<?> constructor = concreteCommandClass.getConstructor(BinarySearchTree.class);
+            command = (Command)constructor.newInstance(Inventory, );
+        }
+        catch(final Exception e)
+        {
+            e.printStackTrace();
+        }
+
+        return command;
+    }
+    */
 
     public abstract void Execute();
 }

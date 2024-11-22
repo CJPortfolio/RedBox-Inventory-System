@@ -2,20 +2,20 @@
 //Name: Christopher Wiratman
 package Command;
 
-import Common.BinarySearchTree;
-import Common.Movie;
+import Common.MovieInventory;
 
 public class RentTitleCommand extends Command{
 
-    public RentTitleCommand(BinarySearchTree<Movie> Inventory)
+    public RentTitleCommand(MovieInventory Inventory, String title, int valueToUse)
     {
-        super(Inventory);
+        super(Inventory, title, valueToUse);
     }
 
     @Override
     public void Execute()
     {
         //Decrement available in list
+        Inventory.rentDVD(title);
 
         //Increment rented in list
     }

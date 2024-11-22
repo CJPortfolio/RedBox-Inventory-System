@@ -4,6 +4,7 @@
 
 import Common.BinarySearchTree;
 import Common.Movie;
+import Common.MovieInventory;
 
 public class Main
 {
@@ -41,15 +42,16 @@ public class Main
         System.out.println("Size: " + bst.size);
         */
         
-
+        //Load inventory.dat file
         BinarySearchTree<Movie> inventory = FileHandling.Processes.processInventory();
 
+        MovieInventory movieInventory = new MovieInventory(inventory);
 
-        
-        //Load inventory.dat file
-        //Create and populate the Binary Search Tree from Common
-        //Load transaction.log
-        //Process all transactions
+        //Load and process transaction.log
+        FileHandling.Processes.processTransactions(movieInventory);
+
+
         //Output final inventory to file
+        FileHandling.Processes.writeFormattedInventoryToFile(movieInventory);
     }
 }

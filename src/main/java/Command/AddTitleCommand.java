@@ -2,14 +2,14 @@
 //Name: Christopher Wiratman
 package Command;
 
-import Common.BinarySearchTree;
 import Common.Movie;
+import Common.MovieInventory;
 
 public class AddTitleCommand extends Command{
 
-    public AddTitleCommand(BinarySearchTree<Movie> Inventory)
+    public AddTitleCommand(MovieInventory Inventory, String title, int valueToUse)
     {
-        super(Inventory);
+        super(Inventory, title, valueToUse);
     }
     
 
@@ -18,16 +18,19 @@ public class AddTitleCommand extends Command{
     {
         
         //Check if movie exists in list
-        String movieTitle;
 
-        //if(Inventory.search(new Movie(movieTitle)) == true)
-
-        
+        if(Inventory.inventory.search(new Movie(title)) != true)
+        {
             //If movie doesn't exist
                 //Add a movie to the list
+            Inventory.inventory.insert(new Movie(title, valueToUse, 0));
+        }
+        else
+        {
             //if movie does exist
                 //Increase availability 
+            Inventory.addDVD(title, valueToUse);
+        }
 
-        
     }
 }
